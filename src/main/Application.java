@@ -29,7 +29,7 @@ public class Application {
                 panel = new Display();
                 frame.add(panel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setSize(400, 400);
+                frame.setSize(800, 800);
                 frame.setVisible(true);
                 
                 // makes the menu

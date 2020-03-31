@@ -6,7 +6,9 @@ import java.awt.RenderingHints;
 
 import javax.swing.JPanel;
 
-
+/*
+ * This class represents the display of the electric field diagram
+ */
 public class Display extends JPanel {
 
 	private static final long serialVersionUID = 1L;
@@ -19,14 +21,15 @@ public class Display extends JPanel {
 		g2 = (Graphics2D) g;
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-		
-		for(PointCharge c : Application.pointCharges) {
+		// draw point charges
+		for(PointCharge c : Application.pointCharges) 
 			c.drawCircle(g2);
-		}
 		
+		// Draw the field lines
 		if(Application.pointCharges.size() > 0)
 			ElectricFieldCalc.drawAllLines(g2);
 		
+		// redraw point charges so there's no lines "on top" of our ponit charges
 		for(PointCharge c : Application.pointCharges) {
 			c.drawCircle(g2);
 		}
