@@ -4,10 +4,17 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
+import java.awt.MenuItem;
 import java.awt.Panel;
+import java.awt.PopupMenu;
 import java.awt.Rectangle;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
 
 /*
  * This class represents a point charge in the program
@@ -26,11 +33,31 @@ public class PointCharge extends Panel implements Constants {
 		this.x = x;
 		this.y = y;
 		point = new Point(x, y);
+		addMouseListener(new MouseAdapter() {
+
+		    public void mousePressed(MouseEvent e) {
+		    	System.out.println("hi");
+		        if (e.isPopupTrigger())
+		            doPop(e);
+		    }
+
+		    public void mouseReleased(MouseEvent e) {
+//		        if (e.isPopupTrigger())
+//		            doPop(e);
+		    }
+
+		    private void doPop(MouseEvent e) {
+		        PopupMenu menu = new PopupMenu();
+		        menu.add(new MenuItem("add charge"));
+		        menu.show(e.getComponent(), e.getX(), e.getY());
+		    }
+         });
 	}
 	
 	public void drawCircle(Graphics2D g2) {		
 		if(Math.signum(charge) == 1)  g2.setColor(Color.BLUE);
 		else if (Math.signum(charge) ==-1) g2.setColor(Color.RED);
+		else g2.setColor(Color.BLACK);
 		
 		g2.fillOval(x-CHARGE_DIAMETER/2, y-CHARGE_DIAMETER/2, CHARGE_DIAMETER, CHARGE_DIAMETER);
 		g2.setColor(Color.WHITE);

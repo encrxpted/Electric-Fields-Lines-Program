@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
  */
 public class ButtonClickListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
-		Application.pointCharges.add(new PointCharge(Double.parseDouble(Application.enterCharge.getText()), 
+		Application.pointCharges.add(new PointCharge(0, 
 				Integer.parseInt(Application.enterX.getText()), Integer.parseInt(Application.enterY.getText())));
 		Application.panel.repaint();
 	}
