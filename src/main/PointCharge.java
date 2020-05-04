@@ -18,7 +18,11 @@ public class PointCharge extends Panel implements Constants {
 	public double charge; // same as # of lines that will come out of it
 	public int x, y;
 	public Point point;
-	public List<Double> thetaOfLines = new ArrayList<>();
+	public int linesDrawn = 0;
+	public double thetaOfIntersection = 0;
+	public List<Double> lineThetas = new ArrayList<>();
+	//public int[] lineIDs; // stores the IDs of lines for this point charge
+	//public List<Double> thetaOfLines = new ArrayList<>();
 
 	// Charge cannot be 0
 	public PointCharge(double charge, int x, int y) {
@@ -26,6 +30,7 @@ public class PointCharge extends Panel implements Constants {
 		this.x = x;
 		this.y = y;
 		point = new Point(x, y);
+		//lineIDs = new int[(int) charge];
 	}
 	
 	public void drawCircle(Graphics2D g2) {		

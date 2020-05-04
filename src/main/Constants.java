@@ -9,6 +9,8 @@ public interface Constants {
 
 	public static final double COLOUMBS_K = 9E9;
 	
-	public static final double TICK = 2;
+	public static final double TICK = .2;
+	
+	public static final double ANGLE_TOL = .12; // tolerance of an angle to be considered "the same"
 
 }
