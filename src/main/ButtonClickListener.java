@@ -21,7 +21,7 @@ public class ButtonClickListener implements ActionListener {
 		}
 	
 		if(valid) {
-			Application.pointCharges.add(new PointCharge(x,y, Integer.parseInt(Application.enterY.getText())));
+			Application.pointCharges.add(new PointCharge(Integer.parseInt(Application.enterCharge.getText()),x,y));
 			Application.panel.repaint();
 		}
 	}
