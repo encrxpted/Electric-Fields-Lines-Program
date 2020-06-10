@@ -1,21 +1,24 @@
 package main;
 
+import java.awt.BorderLayout;
 import java.awt.Button;
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.Panel;
 import java.awt.TextField;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
-
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class Application {
 	static Display panel;
+	static JFrame frame;
 	
-	static TextField enterCharge, enterX, enterY;
+	static JTextField enterCharge, enterX, enterY;
 	
 	public static int charge;
 	public static List<PointCharge> pointCharges = new ArrayList<>();
@@ -25,27 +28,30 @@ public class Application {
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                JFrame frame = new JFrame();
+                frame= new JFrame();
                 panel = new Display();
                 frame.add(panel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setSize(800, 800);
                 frame.setVisible(true);
-                
+              
                 // makes the menu
-                Panel menuPanel = new Panel(new FlowLayout());
-        	    Button addCharge = new Button("Add charge");
-        	    enterCharge = new TextField();
-        	    enterX = new TextField();
-        	    enterY = new TextField();
+                JPanel menuPanel = new JPanel(new FlowLayout());
+        	    JButton addCharge = new JButton("Add charge");
+        	    enterCharge = new HintTextField("Charge");
+        	    enterX = new HintTextField("X Coord");
+        	    enterY = new HintTextField("Y Coord");
 
-        	    menuPanel.add(addCharge);
         	    addCharge.addActionListener(new ButtonClickListener());
         	    menuPanel.add(enterCharge);
         	    menuPanel.add(enterX);
         	    menuPanel.add(enterY);
-        	    panel.add(menuPanel);
-        	    
+        	    menuPanel.add(addCharge);
+
+        	    menuPanel.setBackground(Color.DARK_GRAY);
+        	    frame.add(menuPanel, BorderLayout.NORTH);
+                frame.add(panel);
+
             }
         });
 

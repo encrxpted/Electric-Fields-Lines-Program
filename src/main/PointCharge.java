@@ -19,7 +19,7 @@ import javax.swing.JPopupMenu;
 /*
  * This class represents a point charge in the program
  */
-public class PointCharge extends Panel implements Constants {
+public class PointCharge implements Constants {
 
 	private static final long serialVersionUID = 1L;
 	public double charge; // same as # of lines that will come out of it
@@ -33,25 +33,7 @@ public class PointCharge extends Panel implements Constants {
 		this.x = x;
 		this.y = y;
 		point = new Point(x, y);
-		addMouseListener(new MouseAdapter() {
 
-		    public void mousePressed(MouseEvent e) {
-		    	System.out.println("hi");
-		        if (e.isPopupTrigger())
-		            doPop(e);
-		    }
-
-		    public void mouseReleased(MouseEvent e) {
-//		        if (e.isPopupTrigger())
-//		            doPop(e);
-		    }
-
-		    private void doPop(MouseEvent e) {
-		        PopupMenu menu = new PopupMenu();
-		        menu.add(new MenuItem("add charge"));
-		        menu.show(e.getComponent(), e.getX(), e.getY());
-		    }
-         });
 	}
 	
 	public void drawCircle(Graphics2D g2) {		

@@ -9,8 +9,20 @@ import java.awt.event.ActionListener;
  */
 public class ButtonClickListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
-		Application.pointCharges.add(new PointCharge(0, 
-				Integer.parseInt(Application.enterX.getText()), Integer.parseInt(Application.enterY.getText())));
-		Application.panel.repaint();
+		int x = Integer.parseInt(Application.enterX.getText());
+		int y = Integer.parseInt(Application.enterY.getText());
+		boolean valid = true;
+		
+		for(PointCharge c : Application.pointCharges) {
+			if(c.x == x && c.y == y ) {
+				valid = false;  
+				return;
+			}
+		}
+	
+		if(valid) {
+			Application.pointCharges.add(new PointCharge(x,y, Integer.parseInt(Application.enterY.getText())));
+			Application.panel.repaint();
+		}
 	}
 }

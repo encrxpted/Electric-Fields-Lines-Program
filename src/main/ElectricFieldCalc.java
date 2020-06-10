@@ -8,18 +8,13 @@ import java.util.List;
 
 public class ElectricFieldCalc implements Constants {
 	
-	// draws all electric field lines
-	public static void drawAllLines(Graphics2D g) {
-		for(PointCharge c : Application.pointCharges) {
-			double numLines = Math.abs(c.charge);
-			double angleIncrement = 2*Math.PI / numLines;
+	// Draws lines specified by the user
+	public static void drawListedLines(Graphics2D g) {
+		for(ElectricFieldLine l : Display.lines) 
+			calcAndDrawLine(l.initialCharge, l.initialAngle, g);
 			
-			for(int i = 0; i < numLines; i++) {
-				calcAndDrawLine(c, i*angleIncrement, g);
-			}
-		}
 	}
-	
+		
 	// calculates points for one curve
 	public static void calcAndDrawLine(PointCharge c, double theta1, Graphics2D g) {
 		List<Point> xyPoints = new ArrayList<>(); // list of xy coords for the curve
@@ -47,8 +42,8 @@ public class ElectricFieldCalc implements Constants {
 			
 			for(PointCharge otherCharge : Application.pointCharges) {
 				// if is intersecting another charge, break loop
-				if(!otherCharge.equals(c) && 
-				segment.intersects(otherCharge.x, otherCharge.y, CHARGE_DIAMETER, CHARGE_DIAMETER)) {
+				if(!otherCharge.equals(c) && p.x <= otherCharge.x + CHARGE_RADIUS && p.x >= otherCharge.x - CHARGE_RADIUS
+						&& p.y <= otherCharge.y + CHARGE_RADIUS && p.y >= otherCharge.y - CHARGE_RADIUS) {
 					end = true;
 					break;
 				}
@@ -63,8 +58,8 @@ public class ElectricFieldCalc implements Constants {
 			p = newPoint.clone();
 		}
 		
-		// if the loop was broken before it got to 200
-		if(xyPoints.size() < 200) 
+		// if the loop was broken before it got to 100
+		if(xyPoints.size() < 100) 
 			drawArrowHead(xyPoints.get(xyPoints.size()/2), thetas.get(xyPoints.size()/2), g);
 		
 	}
