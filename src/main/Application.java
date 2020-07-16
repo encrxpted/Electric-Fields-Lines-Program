@@ -1,19 +1,15 @@
 package main;
 
 import java.awt.BorderLayout;
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
-import java.awt.Panel;
-import java.awt.TextField;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
 import main.buttonListeners.AddChargeBListener;
 import main.components.ElectricFieldLine;
 import main.components.PointCharge;

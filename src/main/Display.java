@@ -1,29 +1,10 @@
 package main;
 
-import java.awt.Button;
-import java.awt.Dialog;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Label;
-import java.awt.Panel;
 import java.awt.RenderingHints;
-import java.awt.TextField;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
-
-import main.buttonListeners.AddLineBListener;
 import main.buttonListeners.ClickChargeListener;
-import main.buttonListeners.DeleteChargeBListener;
-import main.components.ElectricFieldLine;
 import main.components.PointCharge;
 
 /*
