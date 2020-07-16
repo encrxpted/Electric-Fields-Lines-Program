@@ -28,3 +28,9 @@ Note: When field lines are drawn, they are drawn according to the electric field
 * Clear all feature
 * "How it works" section in readme
 * "View details" feature for point charges to view its coords, charge, and any lines that begin from it
+
+## Previous Versions
+
+* v0.0-alpha (first version)
+  * Feature to add and remove point charges
+  * Feature to add field lines coming out any point charge at any angle
