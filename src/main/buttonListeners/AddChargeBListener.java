@@ -11,6 +11,8 @@ import main.components.PointCharge;
  * Adds a point charge if the button is clicked
  */
 public class AddChargeBListener implements ActionListener {
+	
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		int x = Integer.parseInt(Application.enterX.getText());
 		int y = Integer.parseInt(Application.enterY.getText());

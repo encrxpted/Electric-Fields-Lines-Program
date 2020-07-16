@@ -15,17 +15,20 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import main.buttonListeners.AddChargeBListener;
+import main.components.ElectricFieldLine;
 import main.components.PointCharge;
 import main.util.gui.HintTextField;
 
 public class Application {
 	public static Display panel;
-	static JFrame frame;
+	public static JFrame frame;
 	
 	public static JTextField enterCharge, enterX, enterY;
 	
 	public static int charge;
 	public static List<PointCharge> pointCharges = new ArrayList<>();
+	public static ArrayList<ElectricFieldLine> lines = new ArrayList<>();
+
 
 	public static void main(String[] args) {
 

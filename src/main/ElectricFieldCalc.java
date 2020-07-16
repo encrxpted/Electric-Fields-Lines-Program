@@ -15,7 +15,7 @@ public class ElectricFieldCalc implements Constants {
 	
 	// Draws lines specified by the user
 	public static void drawListedLines(Graphics2D g) {
-		for(ElectricFieldLine l : Display.lines) 
+		for(ElectricFieldLine l : Application.lines) 
 			calcAndDrawLine(l.initialCharge, l.initialAngle, g);
 			
 	}
