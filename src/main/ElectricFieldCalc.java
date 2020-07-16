@@ -6,6 +6,11 @@ import java.awt.geom.Line2D;
 import java.util.ArrayList;
 import java.util.List;
 
+import main.components.ElectricFieldLine;
+import main.components.PointCharge;
+import main.util.math.Point;
+import main.util.math.Vector;
+
 public class ElectricFieldCalc implements Constants {
 	
 	// Draws lines specified by the user

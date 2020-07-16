@@ -1,4 +1,4 @@
-package main;
+package main.util.gui;
 
 import java.awt.Color;
 import java.awt.event.FocusEvent;
@@ -9,7 +9,7 @@ import javax.swing.JTextField;
  * JTextField with an input hint
  */
 
-class HintTextField extends JTextField implements FocusListener {
+public class HintTextField extends JTextField implements FocusListener {
 
 	private static final long serialVersionUID = 1L;
 	private final String hint;

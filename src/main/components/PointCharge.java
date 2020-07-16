@@ -1,4 +1,4 @@
-package main;
+package main.components;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -15,6 +15,9 @@ import java.util.List;
 
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
+
+import main.Constants;
+import main.util.math.Point;
 
 /*
  * This class represents a point charge in the program

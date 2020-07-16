@@ -1,13 +1,16 @@
-package main;
+package main.buttonListeners;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import main.Application;
+import main.components.PointCharge;
 
 /*
  * Listens for the "add charge" button to be clicked
  * Adds a point charge if the button is clicked
  */
-public class ButtonClickListener implements ActionListener {
+public class AddChargeBListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		int x = Integer.parseInt(Application.enterX.getText());
 		int y = Integer.parseInt(Application.enterY.getText());

@@ -1,12 +1,12 @@
-package main;
+package main.util.math;
 
 /*
  * This class represents a 2D vector with x and y components
  */
 public class Vector {
-	double mag;
-	double theta;
-	double xComp, yComp;
+	public double mag;
+	public double theta;
+	public double xComp, yComp;
 	
 	// theta always in radians
 	public Vector(double mag, double theta) {

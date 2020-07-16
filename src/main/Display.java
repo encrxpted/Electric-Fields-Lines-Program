@@ -20,6 +20,9 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 
+import main.components.ElectricFieldLine;
+import main.components.PointCharge;
+
 /*
  * This class represents the display of the electric field diagram
  */
@@ -155,7 +158,7 @@ public class Display extends JPanel implements Constants {
 		
 		// redraw point charges so there's no lines "on top" of our ponit charges
 		for(PointCharge c : Application.pointCharges) {
-			//c.drawCircle(g2);
+			c.drawCircle(g2);
 		}
 		
 	}

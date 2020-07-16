@@ -14,11 +14,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import main.buttonListeners.AddChargeBListener;
+import main.components.PointCharge;
+import main.util.gui.HintTextField;
+
 public class Application {
-	static Display panel;
+	public static Display panel;
 	static JFrame frame;
 	
-	static JTextField enterCharge, enterX, enterY;
+	public static JTextField enterCharge, enterX, enterY;
 	
 	public static int charge;
 	public static List<PointCharge> pointCharges = new ArrayList<>();
@@ -42,7 +46,7 @@ public class Application {
         	    enterX = new HintTextField("X Coord");
         	    enterY = new HintTextField("Y Coord");
 
-        	    addCharge.addActionListener(new ButtonClickListener());
+        	    addCharge.addActionListener(new AddChargeBListener());
         	    menuPanel.add(enterCharge);
         	    menuPanel.add(enterX);
         	    menuPanel.add(enterY);

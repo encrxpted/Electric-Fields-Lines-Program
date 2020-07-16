@@ -1,8 +1,8 @@
-package main;
+package main.components;
 
 public class ElectricFieldLine {
-	double initialAngle;
-	PointCharge initialCharge;
+	public double initialAngle;
+	public PointCharge initialCharge;
 	
 	public ElectricFieldLine(PointCharge c, double a) {
 		initialCharge = c;
