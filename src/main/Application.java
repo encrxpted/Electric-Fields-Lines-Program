@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import main.buttonListeners.AddChargeBListener;
+import main.buttonListeners.ClearAllBListener;
 import main.components.ElectricFieldLine;
 import main.components.PointCharge;
 import main.util.gui.HintTextField;
@@ -44,12 +45,15 @@ public class Application {
         	    enterCharge = new HintTextField("Charge");
         	    enterX = new HintTextField("X Coord");
         	    enterY = new HintTextField("Y Coord");
+        	    JButton clearAll = new JButton("Clear All");
 
         	    addCharge.addActionListener(new AddChargeBListener());
+        	    clearAll.addActionListener(new ClearAllBListener());
         	    menuPanel.add(enterCharge);
         	    menuPanel.add(enterX);
         	    menuPanel.add(enterY);
         	    menuPanel.add(addCharge);
+        	    menuPanel.add(clearAll);
 
         	    menuPanel.setBackground(Color.DARK_GRAY);
         	    frame.add(menuPanel, BorderLayout.NORTH);
