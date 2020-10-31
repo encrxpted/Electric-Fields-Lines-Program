@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import javafx.stage.Stage;
 import main.buttonListeners.AddChargeBListener;
 import main.buttonListeners.ClearAllBListener;
 import main.components.ElectricFieldLine;
@@ -26,7 +28,6 @@ public class Application {
 	public static List<PointCharge> pointCharges = new ArrayList<>();
 	public static ArrayList<ElectricFieldLine> lines = new ArrayList<>();
 
-
 	public static void main(String[] args) {
 
         EventQueue.invokeLater(new Runnable() {
@@ -38,6 +39,7 @@ public class Application {
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setSize(800, 800);
                 frame.setVisible(true);
+                frame.setTitle("Electric Fields Program");
               
                 // makes the menu
                 JPanel menuPanel = new JPanel(new FlowLayout());
@@ -64,5 +66,9 @@ public class Application {
 
 	}
 
+    
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("Electric Fields Program");
+    }
 
 }
